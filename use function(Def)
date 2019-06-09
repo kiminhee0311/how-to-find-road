@@ -1,0 +1,31 @@
+print('(0<=x,y<=10)')
+print('출발지의 좌표를 입력해주세요')
+a = input().split()
+print('도착지의 좌표를 입력해주세요')
+b = input().split()
+type(a)
+
+aa = []
+bb = []
+for i in range (int(a[0]), int(b[0]) + 1) :
+    aa.append(i)
+for j in range (int(a[1]), int(b[1]) + 1) :
+    bb.append(j)
+for k in aa :
+    x = int(k)
+    for l in bb :
+        y = int(l)
+        def cax(x, y) :
+            cax(x, y) == int(1)
+        print(x, y)
+       
+for x in range (int(a[0]), int(b[0]) + 1) :
+    for y in range (int(a[1]), int(b[1]) + 1) :
+        if int(x)-1 > 0 and int(y)-1 > 0 and int(x)+1 <10 and int(y)+1 <10 :
+            if x == a[0] :
+                cax(x, y+1) == cax(x, y)
+            elif y == b[0] :
+                cax(x+1, y) == cax(x, y)
+            else :
+                cax(x, y) == int(cax(x-1, y)) + int(cax(x, y-1))
+print(int(cax(x, y)))
