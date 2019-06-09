@@ -3,7 +3,6 @@ print('출발지의 좌표를 입력해주세요')
 a = input().split()
 print('도착지의 좌표를 입력해주세요')
 b = input().split()
-type(a)
 
 aa = []
 bb = []
