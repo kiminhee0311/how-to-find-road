@@ -1,0 +1,31 @@
+# how-to-find-road
+print('(0<=x,y<=10)')
+print('출발지의 좌표를 입력해주세요')
+a = input().split()
+print('도착지의 좌표를 입력해주세요')
+b = input().split()
+
+class Queue :    
+    def __init__(self) :
+        self.items = []
+    def enqueue(self, item) :
+        self.items.insert(0,item)
+    def dequeue(self) :
+        return self.items.pop()
+    def isEmpty(self) :
+        return self.items == []
+    def size(self) :
+        return len(self.items)
+
+q = Queue()
+aa = []
+bb = []
+for i in range (int(a[0]), int(b[0]) + 1) :
+    aa.append(i)
+for j in range (int(a[1]), int(b[1]) + 1) :
+    bb.append(j)    
+for k in aa :
+    x = int(k)
+    for l in bb :
+        y = int(l)
+        print(x, y)
