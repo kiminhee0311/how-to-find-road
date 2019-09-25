@@ -1,0 +1,16 @@
+a = list(map(int, input("출발 지점의 x,y 좌푯값을 입력해주세요.").split()))
+b = list(map(int, input("도착 지점의 x,y 좌푯값을 입력해주세요.").split()))
+def BBareun(ini, fin):
+    x = fin[0] - ini[0]
+    y = fin[1] - ini[1]
+    return Combination(x+y,min(x,y))
+def Fact(n):
+    if n==1: return 1
+    return Fact(n-1)*n
+def Combination(n,r):
+    return Fact(n-r+1)/Fact(r)
+c=list(map(int, input("장애물이 놓여있는 지점의 x,y 좌푯값을 입력해주세요.").split())) #장애물을 점으로 볼 수 있는 경우
+def Pihaega(ini,fin,obs):
+    return BBareun(ini,fin)-BBareun(ini,obs)*BBareun(obs,fin)
+print(Pihaega(a,b,c))
+        
