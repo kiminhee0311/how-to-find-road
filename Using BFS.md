@@ -1,3 +1,4 @@
+```python
 import numpy as np
 
 h,w = map(int,input('map의 높이와 너비를 지정하시오 ex) 3,4 -> 세로:4칸, 가로:5칸 \n').split(','))
@@ -95,3 +96,4 @@ for i in range(h+1):
         else:
             print(mapping[i][j], end = ' ')
     print()
+```
