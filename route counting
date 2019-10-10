@@ -1,0 +1,30 @@
+print('도착지의 좌표를 입력해주세요(출발: 0.0) ex) 3,5')
+a = input().split(',')
+print('갈 수 없는 통로(.5 사용) 또는 점의 좌표를 모두 입력해주세요 ex) 3,2.5 4.5,3 3,4')
+b = input().split()
+counter={}
+def f(m,n):
+    s=(2**m)*(5**n)
+    if s in counter:
+        pass
+    elif str(str(m)+','+str(n)) in b :
+        counter[s]= 0
+    elif m ==0 and n ==0:
+        counter[s]= 1
+    elif m==-1 or n == -1:
+        counter[s]= 0
+    elif str(str(m-0.5)+','+str(n)) in b and str(str(m)+','+str(n-0.5)) in b:
+        counter[s]= 0
+    elif str(str(m-0.5)+','+str(n)) in b:
+        f(m,n-1)
+        counter[s]= counter[s/5]
+    elif str(str(m)+','+str(n-0.5)) in b:    
+        f(m-1,n)
+        counter[s]= counter[s/2]
+    else:
+        f(m-1,n)
+        f(m,n-1)
+        counter[s]= counter[s/2] + counter[s/5]
+    return counter[s]
+print(b)
+print(str(f(int(a[0]),int(a[1])))+'가지')
